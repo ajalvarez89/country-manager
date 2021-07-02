@@ -3,18 +3,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Contact Manager</title>
 
+    <title>User Layout</title>
     <link rel="icon" href="<%= asset_path('favicon.png') %>" type="image/png">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-      <!-- Fonts -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+
   </head>
 
-  <body class="">
+  <body class="bg-default">
+    <%= render "layouts/navbar" %>
     <%= yield %>
+    <%= render "layouts/footer" %>
   </body>
 </html>
