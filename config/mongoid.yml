@@ -1,0 +1,25 @@
+---
+default: &default
+  clients:
+    default:
+      uri: <%= ENV["MONGO_URI"] %>
+      options:
+        server_selection_timeout: 5
+  options:
+
+development:
+  <<: *default
+
+test:
+  clients:
+    default:
+      database: contact_manager_test
+      hosts:
+        - localhost:27017
+      options:
+        read:
+          mode: :primary
+        max_pool_size: 1
+
+production:
+  <<: *default
