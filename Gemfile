@@ -6,9 +6,10 @@ git_source(:github) { |repo| "https://github.com/#{ repo }.git" }
 ruby '2.7.0'
 
 gem 'bootsnap', '>= 1.4.2', require: false
+gem 'devise'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'jbuilder', '~> 2.7'
-gem 'mongoid', '~> 7.0.5'
+gem 'mongoid'
 gem 'pagy', '~> 3.5'
 gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.7'

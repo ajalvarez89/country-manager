@@ -1,25 +1,23 @@
 ---
-default: &default
+production:
   clients:
     default:
-      uri: <%= ENV["MONGO_URI"] %>
-      options:
-        server_selection_timeout: 5
-  options:
-
+      uri: <%= ENV['MONGO_URL'] %>
 development:
-  <<: *default
-
+  clients:
+    default:
+      database: rails_mongodb_development
+      hosts:
+        - localhost:27017
+      options:
+  options:
 test:
   clients:
     default:
-      database: contact_manager_test
+      database: rails_mongodb_test
       hosts:
         - localhost:27017
       options:
         read:
           mode: :primary
         max_pool_size: 1
-
-production:
-  <<: *default

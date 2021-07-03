@@ -45,7 +45,7 @@
                   <%= image_tag("favicon.png", alt: "Image placeholder") %>
                 </span>
                 <div class="media-body  ml-2  d-none d-lg-block">
-                  <span class="mb-0 text-sm  font-weight-bold">email</span>
+                  <span class="mb-0 text-sm  font-weight-bold"><%= current_user.email %></span>
                 </div>
               </div>
             </a>
@@ -117,10 +117,10 @@
           <div class="card-header border-0">
             <div class="row align-items-center">
               <div class="col">
-                <h3 class="mb-0">Contacts</h3>
+                <h3 class="mb-0">Countries</h3>
               </div>
               <div class="col text-right">
-                <a href="" class="btn btn-sm btn-primary">New Contact</a>
+                <a href="" class="btn btn-sm btn-primary">New Country</a>
               </div>
             </div>
           </div>
