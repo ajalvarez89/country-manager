@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'countries#index'
 
-  resources :countries, only: %i[index]
+  resources :countries
+  # resources :countries, only: %i[index show update]
 
   devise_for :users
   devise_scope :user do

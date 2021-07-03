@@ -9,7 +9,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'devise'
 gem 'font-awesome-sass', '~> 5.12.0'
 gem 'jbuilder', '~> 2.7'
-gem 'mongoid'
+gem 'mongoid', github: 'mongodb/mongoid', branch: 'master'
 gem 'pagy', '~> 3.5'
 gem 'puma', '~> 4.1'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.7'
@@ -21,6 +21,8 @@ gem 'webpacker', '~> 4.0'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'dotenv-rails'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -32,6 +34,10 @@ end
 
 group :test do
   gem 'capybara', '>= 2.15'
+  gem 'database_cleaner', '~> 1.8.5'
+  gem 'faker'
+  gem 'mongoid-rspec'
+  gem 'rails-controller-testing'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
