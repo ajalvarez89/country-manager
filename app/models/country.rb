@@ -1,19 +1,16 @@
 # frozen_string_literal: true
 
 class Country
-  include ActiveModel::Model
-  attr_accessor :name, :capital, :subregion, :timezones, :flag
+  include Mongoid::Document
+  include Mongoid::Timestamps
 
-  def initialize(params)
-    @attributes = JSON.parse(params.to_json, object_class: OpenStruct)
-    @name = @attributes[:name]
-    @capital = @attributes[:capital]
-    @subregion = @attributes[:subregion]
-    @timezones = @attributes[:timezones]
-    @flag = @attributes[:flag]
-  end
+  field :name, type: String
+  field :capital, type: String
+  field :region, type: String
+  field :subregion, type: String
+  field :flag, type: String
 
-  private
+  validates :name, :flag, presence: true
 
-  attr_reader :attributes
+  scope :recents, -> { order(created_at: :desc) }
 end

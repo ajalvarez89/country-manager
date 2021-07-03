@@ -4,7 +4,7 @@ require 'rest-client'
 
 module Requests
   class CountryService
-    def self.request
+    def execute
       headers = {
         content_type: :json,
         accept: :json
@@ -17,9 +17,19 @@ module Requests
           headers: headers
         )
 
-        JSON.parse(response.body, symbolize_names: true)
+        build_countries(response)
       rescue StandardError => exception
-        exception.response
+        exception
+      end
+    end
+
+    private
+
+    def build_countries(response)
+      parsed_params = JSON.parse(response.body, symbolize_names: true).reverse
+
+      parsed_params.each do |params|
+        CountryCreationService.new(params: params).execute!
       end
     end
   end

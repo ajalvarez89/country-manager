@@ -1,24 +1,55 @@
-# README
+# Country Manager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is a test for manage the countries supplied by an external API.
+```bash
+  https://restcountries.eu/rest/v2/all
+```
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+Just run the bin setup, is required MONGODB:
 
-* System dependencies
+```bash
+  bin/setup
+```
+or
 
-* Configuration
+```bash
+  bundle install
+  yarn install --check-files
+```
 
-* Database creation
+To run the app:
 
-* Database initialization
+```bash
+  cp .env.example .env
+  source .env
+  and
+  rails server
+```
 
-* How to run the test suite
+## Validation:💎
 
-* Services (job queues, cache servers, search engines, etc.)
+for validation of unit tests run:
 
-* Deployment instructions
+```ruby
+  bundle exec rspec
+```
 
-* ...
+for validation of rubocop linter run:
+
+```ruby
+  rubocop
+```
+
+## check use:💎
+
+*registration/login:
+```bash
+  the user be able to crate an account and also a login
+```
+
+*CRUD COUNTRIES:
+```bash
+- The user be able to administrate data supplied by an external API
+```
